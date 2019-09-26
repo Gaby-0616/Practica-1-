@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link href="https://file.myfontastic.com/HScYQHNzoWnwg6ZX3ufstC/icons.css" rel="stylesheet">
+   <link rel="stylesheet" href="css/estilos.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Practica 1 </title>
+</head>
+<body class="body">
+   <header class="header">
+         <div id="navbar">
+               <a href="index.html" id="logo">Gabriel Almonte</a>
+               <div id="navbar-right">
+                 <a class="active" href="index.html">Inicio</a>
+                 <a href="#">Nosotros</a>
+                 <a href="#">Servicio</a>
+                 <a href="Noticia.html">Noticias</a>
+                 <a href="Contacto.html">Contacto</a>
+               </div>
+             </div>
+       
+   </header>
+   <script>
+         // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+      window.onscroll = function() {scrollFunction()};
+      
+      function scrollFunction() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+          document.getElementById("navbar").style.padding = "25px 10px";
+          document.getElementById("logo").style.fontSize = "15px";
+        } else {
+          document.getElementById("navbar").style.padding = "25px 10px";
+          document.getElementById("logo").style.fontSize = "15px";
+        }
+      }
+      </script>
+
+<style>
+  body {
+    font-family: Arial;
+    margin: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  img {
+    vertical-align: middle;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+    padding-top: 80px;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 30%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+  </style>
+  
+
+  
+  <div class="container">
+    <div class="mySlides">
+      <div class="numbertext">1 / 6</div>
+      <img src="img/m1.jpg" width="100%" height="400">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">2 / 6</div>
+      <img src="img/p.jpg" width="100%" height="400">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">3 / 6</div>
+      <img src="img/iphone.jpg" width="100%" height="400">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext">4 / 6</div>
+      <img src="img/android.jpg" width="100%" height="400">
+    </div>
+      
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+  
+    <div class="row">
+      <div class="column">
+        <img class="demo cursor" src="img/m1.jpg" style="width:100%" onclick="currentSlide(1)" >
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="img/p.jpg" style="width:100%" onclick="currentSlide(2)" >
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="img/iphone.jpg" style="width:100%" onclick="currentSlide(3)" >
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="img/android.jpg" style="width:100%" onclick="currentSlide(4)" >
+      </div>
+  </div>
+  </div>
+  
+  <script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+  </script>
+      
+<section>
+ <!-- Documentacion  -->
+   <div class="container-fluid bg-1 text-center">
+            <b><h1>Google defiende que ha alcanzado la «supremacía cuántica», 
+               pero no está claro que sea así: qué es y por qué es importante</h1></b>
+      <img src="img/tecno.jpg" class="img-circle" alt="Bird">
+  <p>Gil Kalai no es el único investigador que defiende la imposibilidad de alcanzar la supremacía cuántica,
+      pero es uno de los que lo hacen con más vehemencia. Este reputado matemático israelí que da clase en Yale 
+      asegura que nunca alcanzaremos este logro porque a medida que se incrementa el número de 
+     estados de un sistema cuántico, y, por tanto, su complejidad, es más probable que se comporte 
+     como uno clásico, lo que provocaría que pierda cualquier ventaja sobre una máquina convencional.</p>
+</div>
+
+
+
+
+
+ <!-- Textosss con imagen -->
+<div class="container-fluid bg-4 text-center">
+      <h1>Lo ultimo </h1>
+      <div class="row">
+        <div class="col-sm-4">
+          <h2>Apple</h2>
+            <p>IPhone 11 Pro,primeras impresiones: los cambios han favorecido al que aspira a 
+             ser el buque insignia compacto más completo del año</p>
+          <img src="img/iphone.jpg" width="400" height="250" class="img-rounded" alt="Cinque Terre">
+        </div>
+        <div class="col-sm-4">
+           <h2>Android</h2>
+          <p>Huawei Mate 30 sin Google: lo que sabemos, lo que no, 
+             y qué diferencia a este proyecto de los que ya hemos visto antes</p>
+          <img src="img/android.jpg" width="400" height="250" class="img-rounded" alt="Cinque Terre">
+        </div>
+        <div class="col-sm-4">
+           <h2>Vehiculos</h2>
+          <p>A partir de ahora los Tesla Model 3 
+             sonarán como un ovni o como un coche de gasolina, según hacia dónde vayan</p>
+          <img src="img/tesla.jpg" width="400" height="250" class="img-rounded" alt="Cinque Terre">
+        </div>
+      </div>
+    </div>
+   </section>
+
+
+
+<footer class="text-center">
+   <a><iframe id="mapa" width="500" height="300" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.713417262691!2d-69.66484998545755!3d18.451316676105133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf7ff3f1653e37%3A0xc80c36909a523777!2sInstituto%20Tecnol%C3%B3gico%20de%20Las%20Am%C3%A9ricas%20(ITLA)!5e0!3m2!1ses-419!2sdo!4v1569090864053!5m2!1ses-419!2sdo" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>	
+      <footer class="text-center">
+            <a class="up-arrow" href="index.html" data-toggle="tooltip" title="TO TOP">
+              <span class="glyphicon glyphicon-chevron-up"></span>
+            </a><br><br>
+      <p>2019 Made By <a>Gabriel Almonte 2017-4960</a></p>
+    </footer>
+    <script>
+         $(document).ready(function(){
+           // Initialize Tooltip
+           $('[data-toggle="tooltip"]').tooltip();
+         })
+         </script>
+       
+</body>
+</html>
